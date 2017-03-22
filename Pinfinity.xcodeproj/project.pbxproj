@@ -1,0 +1,551 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		64797A0E1E82E0AB007943A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64797A0D1E82E0AB007943A2 /* AppDelegate.swift */; };
+		64797A101E82E0AB007943A2 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 64797A0F1E82E0AB007943A2 /* GameScene.sks */; };
+		64797A121E82E0AB007943A2 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 64797A111E82E0AB007943A2 /* Actions.sks */; };
+		64797A141E82E0AB007943A2 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64797A131E82E0AB007943A2 /* GameScene.swift */; };
+		64797A161E82E0AB007943A2 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64797A151E82E0AB007943A2 /* GameViewController.swift */; };
+		64797A191E82E0AB007943A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64797A171E82E0AB007943A2 /* Main.storyboard */; };
+		64797A1B1E82E0AB007943A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64797A1A1E82E0AB007943A2 /* Assets.xcassets */; };
+		64797A1E1E82E0AB007943A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64797A1C1E82E0AB007943A2 /* LaunchScreen.storyboard */; };
+		64797A291E82E0AB007943A2 /* PinfinityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64797A281E82E0AB007943A2 /* PinfinityTests.swift */; };
+		64797A341E82E0AB007943A2 /* PinfinityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64797A331E82E0AB007943A2 /* PinfinityUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		64797A251E82E0AB007943A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 64797A021E82E0AB007943A2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 64797A091E82E0AB007943A2;
+			remoteInfo = Pinfinity;
+		};
+		64797A301E82E0AB007943A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 64797A021E82E0AB007943A2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 64797A091E82E0AB007943A2;
+			remoteInfo = Pinfinity;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		64797A0A1E82E0AB007943A2 /* Pinfinity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pinfinity.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		64797A0D1E82E0AB007943A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		64797A0F1E82E0AB007943A2 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		64797A111E82E0AB007943A2 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		64797A131E82E0AB007943A2 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		64797A151E82E0AB007943A2 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		64797A181E82E0AB007943A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		64797A1A1E82E0AB007943A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		64797A1D1E82E0AB007943A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		64797A1F1E82E0AB007943A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64797A241E82E0AB007943A2 /* PinfinityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PinfinityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		64797A281E82E0AB007943A2 /* PinfinityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinfinityTests.swift; sourceTree = "<group>"; };
+		64797A2A1E82E0AB007943A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64797A2F1E82E0AB007943A2 /* PinfinityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PinfinityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		64797A331E82E0AB007943A2 /* PinfinityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinfinityUITests.swift; sourceTree = "<group>"; };
+		64797A351E82E0AB007943A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		64797A071E82E0AB007943A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64797A211E82E0AB007943A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64797A2C1E82E0AB007943A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		64797A011E82E0AB007943A2 = {
+			isa = PBXGroup;
+			children = (
+				64797A0C1E82E0AB007943A2 /* Pinfinity */,
+				64797A271E82E0AB007943A2 /* PinfinityTests */,
+				64797A321E82E0AB007943A2 /* PinfinityUITests */,
+				64797A0B1E82E0AB007943A2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		64797A0B1E82E0AB007943A2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				64797A0A1E82E0AB007943A2 /* Pinfinity.app */,
+				64797A241E82E0AB007943A2 /* PinfinityTests.xctest */,
+				64797A2F1E82E0AB007943A2 /* PinfinityUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		64797A0C1E82E0AB007943A2 /* Pinfinity */ = {
+			isa = PBXGroup;
+			children = (
+				64797A0D1E82E0AB007943A2 /* AppDelegate.swift */,
+				64797A0F1E82E0AB007943A2 /* GameScene.sks */,
+				64797A111E82E0AB007943A2 /* Actions.sks */,
+				64797A131E82E0AB007943A2 /* GameScene.swift */,
+				64797A151E82E0AB007943A2 /* GameViewController.swift */,
+				64797A171E82E0AB007943A2 /* Main.storyboard */,
+				64797A1A1E82E0AB007943A2 /* Assets.xcassets */,
+				64797A1C1E82E0AB007943A2 /* LaunchScreen.storyboard */,
+				64797A1F1E82E0AB007943A2 /* Info.plist */,
+			);
+			path = Pinfinity;
+			sourceTree = "<group>";
+		};
+		64797A271E82E0AB007943A2 /* PinfinityTests */ = {
+			isa = PBXGroup;
+			children = (
+				64797A281E82E0AB007943A2 /* PinfinityTests.swift */,
+				64797A2A1E82E0AB007943A2 /* Info.plist */,
+			);
+			path = PinfinityTests;
+			sourceTree = "<group>";
+		};
+		64797A321E82E0AB007943A2 /* PinfinityUITests */ = {
+			isa = PBXGroup;
+			children = (
+				64797A331E82E0AB007943A2 /* PinfinityUITests.swift */,
+				64797A351E82E0AB007943A2 /* Info.plist */,
+			);
+			path = PinfinityUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		64797A091E82E0AB007943A2 /* Pinfinity */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64797A381E82E0AB007943A2 /* Build configuration list for PBXNativeTarget "Pinfinity" */;
+			buildPhases = (
+				64797A061E82E0AB007943A2 /* Sources */,
+				64797A071E82E0AB007943A2 /* Frameworks */,
+				64797A081E82E0AB007943A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Pinfinity;
+			productName = Pinfinity;
+			productReference = 64797A0A1E82E0AB007943A2 /* Pinfinity.app */;
+			productType = "com.apple.product-type.application";
+		};
+		64797A231E82E0AB007943A2 /* PinfinityTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64797A3B1E82E0AB007943A2 /* Build configuration list for PBXNativeTarget "PinfinityTests" */;
+			buildPhases = (
+				64797A201E82E0AB007943A2 /* Sources */,
+				64797A211E82E0AB007943A2 /* Frameworks */,
+				64797A221E82E0AB007943A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				64797A261E82E0AB007943A2 /* PBXTargetDependency */,
+			);
+			name = PinfinityTests;
+			productName = PinfinityTests;
+			productReference = 64797A241E82E0AB007943A2 /* PinfinityTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		64797A2E1E82E0AB007943A2 /* PinfinityUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64797A3E1E82E0AB007943A2 /* Build configuration list for PBXNativeTarget "PinfinityUITests" */;
+			buildPhases = (
+				64797A2B1E82E0AB007943A2 /* Sources */,
+				64797A2C1E82E0AB007943A2 /* Frameworks */,
+				64797A2D1E82E0AB007943A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				64797A311E82E0AB007943A2 /* PBXTargetDependency */,
+			);
+			name = PinfinityUITests;
+			productName = PinfinityUITests;
+			productReference = 64797A2F1E82E0AB007943A2 /* PinfinityUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		64797A021E82E0AB007943A2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Klasen;
+				TargetAttributes = {
+					64797A091E82E0AB007943A2 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = CD9P7A9V9J;
+						ProvisioningStyle = Automatic;
+					};
+					64797A231E82E0AB007943A2 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = CD9P7A9V9J;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 64797A091E82E0AB007943A2;
+					};
+					64797A2E1E82E0AB007943A2 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = CD9P7A9V9J;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 64797A091E82E0AB007943A2;
+					};
+				};
+			};
+			buildConfigurationList = 64797A051E82E0AB007943A2 /* Build configuration list for PBXProject "Pinfinity" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 64797A011E82E0AB007943A2;
+			productRefGroup = 64797A0B1E82E0AB007943A2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				64797A091E82E0AB007943A2 /* Pinfinity */,
+				64797A231E82E0AB007943A2 /* PinfinityTests */,
+				64797A2E1E82E0AB007943A2 /* PinfinityUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		64797A081E82E0AB007943A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64797A191E82E0AB007943A2 /* Main.storyboard in Resources */,
+				64797A101E82E0AB007943A2 /* GameScene.sks in Resources */,
+				64797A1B1E82E0AB007943A2 /* Assets.xcassets in Resources */,
+				64797A1E1E82E0AB007943A2 /* LaunchScreen.storyboard in Resources */,
+				64797A121E82E0AB007943A2 /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64797A221E82E0AB007943A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64797A2D1E82E0AB007943A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		64797A061E82E0AB007943A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64797A141E82E0AB007943A2 /* GameScene.swift in Sources */,
+				64797A161E82E0AB007943A2 /* GameViewController.swift in Sources */,
+				64797A0E1E82E0AB007943A2 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64797A201E82E0AB007943A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64797A291E82E0AB007943A2 /* PinfinityTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64797A2B1E82E0AB007943A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64797A341E82E0AB007943A2 /* PinfinityUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		64797A261E82E0AB007943A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 64797A091E82E0AB007943A2 /* Pinfinity */;
+			targetProxy = 64797A251E82E0AB007943A2 /* PBXContainerItemProxy */;
+		};
+		64797A311E82E0AB007943A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 64797A091E82E0AB007943A2 /* Pinfinity */;
+			targetProxy = 64797A301E82E0AB007943A2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		64797A171E82E0AB007943A2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				64797A181E82E0AB007943A2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		64797A1C1E82E0AB007943A2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				64797A1D1E82E0AB007943A2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		64797A361E82E0AB007943A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		64797A371E82E0AB007943A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		64797A391E82E0AB007943A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CD9P7A9V9J;
+				INFOPLIST_FILE = Pinfinity/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.klasen.Pinfinity;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		64797A3A1E82E0AB007943A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CD9P7A9V9J;
+				INFOPLIST_FILE = Pinfinity/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.klasen.Pinfinity;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		64797A3C1E82E0AB007943A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = CD9P7A9V9J;
+				INFOPLIST_FILE = PinfinityTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.klasen.PinfinityTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pinfinity.app/Pinfinity";
+			};
+			name = Debug;
+		};
+		64797A3D1E82E0AB007943A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = CD9P7A9V9J;
+				INFOPLIST_FILE = PinfinityTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.klasen.PinfinityTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pinfinity.app/Pinfinity";
+			};
+			name = Release;
+		};
+		64797A3F1E82E0AB007943A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = CD9P7A9V9J;
+				INFOPLIST_FILE = PinfinityUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.klasen.PinfinityUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Pinfinity;
+			};
+			name = Debug;
+		};
+		64797A401E82E0AB007943A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = CD9P7A9V9J;
+				INFOPLIST_FILE = PinfinityUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.klasen.PinfinityUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Pinfinity;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		64797A051E82E0AB007943A2 /* Build configuration list for PBXProject "Pinfinity" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64797A361E82E0AB007943A2 /* Debug */,
+				64797A371E82E0AB007943A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64797A381E82E0AB007943A2 /* Build configuration list for PBXNativeTarget "Pinfinity" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64797A391E82E0AB007943A2 /* Debug */,
+				64797A3A1E82E0AB007943A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		64797A3B1E82E0AB007943A2 /* Build configuration list for PBXNativeTarget "PinfinityTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64797A3C1E82E0AB007943A2 /* Debug */,
+				64797A3D1E82E0AB007943A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		64797A3E1E82E0AB007943A2 /* Build configuration list for PBXNativeTarget "PinfinityUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64797A3F1E82E0AB007943A2 /* Debug */,
+				64797A401E82E0AB007943A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 64797A021E82E0AB007943A2 /* Project object */;
+}
