@@ -11,100 +11,152 @@ import GameplayKit
 
 class GameScene: SKScene {
     
-    var entities = [GKEntity]()
-    var graphs = [String : GKGraph]()
-    
-    private var lastUpdateTime : TimeInterval = 0
-    private var label : SKLabelNode?
-    private var spinnyNode : SKShapeNode?
-    
-    override func sceneDidLoad() {
-
-        self.lastUpdateTime = 0
-        
-        // Get label node from scene and store it for use later
-        self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
-        if let label = self.label {
-            label.alpha = 0.0
-            label.run(SKAction.fadeIn(withDuration: 2.0))
-        }
-        
-        // Create shape node to use during mouse interaction
-        let w = (self.size.width + self.size.height) * 0.05
-        self.spinnyNode = SKShapeNode.init(rectOf: CGSize.init(width: w, height: w), cornerRadius: w * 0.3)
-        
-        if let spinnyNode = self.spinnyNode {
-            spinnyNode.lineWidth = 2.5
-            
-            spinnyNode.run(SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(M_PI), duration: 1)))
-            spinnyNode.run(SKAction.sequence([SKAction.wait(forDuration: 0.5),
-                                              SKAction.fadeOut(withDuration: 0.5),
-                                              SKAction.removeFromParent()]))
+    var rightFlipper : Flipper?
+    var leftFlipper : Flipper?
+    var scoreLabel : SKLabelNode?
+    var score : Int = 0 {
+        didSet {
+            scoreLabel?.text = "\(score)"
         }
     }
+    var coinLabel : SKLabelNode?
+    var coinScore : Int = 0 {
+        didSet {
+            coinLabel?.text = "\(coinScore)"
+        }
+    }
+    var originalBall: Ball?
     
+    override func didMove(to view: SKView) {
+        setUp()
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+    }
+    
+    func moveOriginalBall(toPoint pos : CGPoint) {
+        originalBall?.position = pos
+    }
     
     func touchDown(atPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.green
-            self.addChild(n)
+        
+        if(pos.x < -3){
+            leftFlipper?.flipperMoveUp(onSide: "Left")
+            score += 1
+        } else if (pos.x > 3) {
+            rightFlipper?.flipperMoveUp(onSide: "Right")
+            coinScore += 1
         }
-    }
-    
-    func touchMoved(toPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.blue
-            self.addChild(n)
-        }
+        
     }
     
     func touchUp(atPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.red
-            self.addChild(n)
+        
+        if(pos.x < -3){
+            leftFlipper?.flipperMoveDown(onSide: "Left")
+        } else if (pos.x > 3) {
+            rightFlipper?.flipperMoveDown(onSide: "Right")
+        } else {
+            rightFlipper?.playDownSound()
         }
+        
+        if (pos.x > 0 && pos.y > 0) {
+            moveOriginalBall(toPoint: pos)
+        }
+        
+    }
+    
+    func touchMoved(toPoint pos : CGPoint) {
+        
+        if (pos.x >= -3 && pos.x <= 3) {
+            leftFlipper?.flipperMoveDownNoSound(onSide: "Left")
+            rightFlipper?.flipperMoveDownNoSound(onSide: "Right")
+        }
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let label = self.label {
-            label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
-        }
-        
         for t in touches { self.touchDown(atPoint: t.location(in: self)) }
     }
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
-    }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches { self.touchUp(atPoint: t.location(in: self)) }
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
+        for t in touches { self.touchUp(atPoint: t.location(in: self))}
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
+        
+        /*let touch = touches.first
+        let location = touch?.location(in: self).x as! Float
+        
+        if (location? >= -3.0 && location? <= 3.0) {
+            leftFlipper?.flipperMoveDownNoSound(onSide: "Left")
+            rightFlipper?.flipperMoveDownNoSound(onSide: "Right")
+        }*/
     }
     
     
-    override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
-        
-        // Initialize _lastUpdateTime if it has not already been
-        if (self.lastUpdateTime == 0) {
-            self.lastUpdateTime = currentTime
+    func setUp() {
+        setupRightFlipper()
+        setupLeftFlipper()
+        setupScore()
+        setupCoinScore()
+        setupEdges()
+        setupOriginalBall()
+    }
+    
+    func setupOriginalBall() {
+        if let ball: Ball = self.childNode(withName: "Original Ball") as? Ball {
+            originalBall = ball
         }
+    }
+    
+    func setupEdges() {
+        let topRight = CGPoint(x: 187.5, y: 333.5)
+        let topLeft = CGPoint(x: -187.4, y: 333.5)
+        let bottomRight = CGPoint(x: 187.5, y: -333.5)
+        let bottomLeft = CGPoint(x: -187.4, y: -333.5)
         
-        // Calculate time since last update
-        let dt = currentTime - self.lastUpdateTime
+        let rightEdge = SKNode()
+        rightEdge.physicsBody = SKPhysicsBody(edgeFrom: topRight, to: bottomRight)
         
-        // Update entities
-        for entity in self.entities {
-            entity.update(deltaTime: dt)
+        let leftEdge = SKNode()
+        leftEdge.physicsBody = SKPhysicsBody(edgeFrom: topLeft, to: bottomLeft)
+        
+        addChild(rightEdge)
+        addChild(leftEdge)
+    }
+    
+    func setupCoinScore() {
+        if let coinScore_: SKLabelNode = self.childNode(withName: "Coin Score") as? SKLabelNode{
+            coinLabel = coinScore_
+            
+            coinScore = 0
         }
-        
-        self.lastUpdateTime = currentTime
+    }
+    
+    func setupScore() {
+        if let score_: SKLabelNode = self.childNode(withName: "Score") as? SKLabelNode{
+            scoreLabel = score_
+            
+            score = 0
+        }
+    }
+    
+    func setupRightFlipper() {
+        if let flipper: Flipper = self.childNode(withName: "Right Flipper") as? Flipper {
+            rightFlipper = flipper
+        }
+    }
+    
+    func setupLeftFlipper() {
+        if let flipper: Flipper = self.childNode(withName: "Left Flipper") as? Flipper {
+            leftFlipper = flipper
+        }
     }
 }

@@ -17,6 +17,10 @@
 		64797A1E1E82E0AB007943A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64797A1C1E82E0AB007943A2 /* LaunchScreen.storyboard */; };
 		64797A291E82E0AB007943A2 /* PinfinityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64797A281E82E0AB007943A2 /* PinfinityTests.swift */; };
 		64797A341E82E0AB007943A2 /* PinfinityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64797A331E82E0AB007943A2 /* PinfinityUITests.swift */; };
+		64CE99C91E87825400F5CD56 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE99C81E87825400F5CD56 /* Ball.swift */; };
+		64F5B3131E8740A90027C5DF /* FlipperDown.wav in Resources */ = {isa = PBXBuildFile; fileRef = 64F5B3111E8740A90027C5DF /* FlipperDown.wav */; };
+		64F5B3141E8740A90027C5DF /* FlipperUp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 64F5B3121E8740A90027C5DF /* FlipperUp.wav */; };
+		64F5B3161E8746F40027C5DF /* Flipper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F5B3151E8746F40027C5DF /* Flipper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		64797A2F1E82E0AB007943A2 /* PinfinityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PinfinityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		64797A331E82E0AB007943A2 /* PinfinityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinfinityUITests.swift; sourceTree = "<group>"; };
 		64797A351E82E0AB007943A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64CE99C81E87825400F5CD56 /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
+		64F5B3111E8740A90027C5DF /* FlipperDown.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = FlipperDown.wav; sourceTree = "<group>"; };
+		64F5B3121E8740A90027C5DF /* FlipperUp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = FlipperUp.wav; sourceTree = "<group>"; };
+		64F5B3151E8746F40027C5DF /* Flipper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flipper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +111,7 @@
 		64797A0C1E82E0AB007943A2 /* Pinfinity */ = {
 			isa = PBXGroup;
 			children = (
+				64F5B3101E8740A00027C5DF /* Sounds */,
 				64797A0D1E82E0AB007943A2 /* AppDelegate.swift */,
 				64797A0F1E82E0AB007943A2 /* GameScene.sks */,
 				64797A111E82E0AB007943A2 /* Actions.sks */,
@@ -112,6 +121,8 @@
 				64797A1A1E82E0AB007943A2 /* Assets.xcassets */,
 				64797A1C1E82E0AB007943A2 /* LaunchScreen.storyboard */,
 				64797A1F1E82E0AB007943A2 /* Info.plist */,
+				64F5B3151E8746F40027C5DF /* Flipper.swift */,
+				64CE99C81E87825400F5CD56 /* Ball.swift */,
 			);
 			path = Pinfinity;
 			sourceTree = "<group>";
@@ -132,6 +143,15 @@
 				64797A351E82E0AB007943A2 /* Info.plist */,
 			);
 			path = PinfinityUITests;
+			sourceTree = "<group>";
+		};
+		64F5B3101E8740A00027C5DF /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				64F5B3121E8740A90027C5DF /* FlipperUp.wav */,
+				64F5B3111E8740A90027C5DF /* FlipperDown.wav */,
+			);
+			name = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,7 +268,9 @@
 				64797A101E82E0AB007943A2 /* GameScene.sks in Resources */,
 				64797A1B1E82E0AB007943A2 /* Assets.xcassets in Resources */,
 				64797A1E1E82E0AB007943A2 /* LaunchScreen.storyboard in Resources */,
+				64F5B3141E8740A90027C5DF /* FlipperUp.wav in Resources */,
 				64797A121E82E0AB007943A2 /* Actions.sks in Resources */,
+				64F5B3131E8740A90027C5DF /* FlipperDown.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +297,8 @@
 			files = (
 				64797A141E82E0AB007943A2 /* GameScene.swift in Sources */,
 				64797A161E82E0AB007943A2 /* GameViewController.swift in Sources */,
+				64CE99C91E87825400F5CD56 /* Ball.swift in Sources */,
+				64F5B3161E8746F40027C5DF /* Flipper.swift in Sources */,
 				64797A0E1E82E0AB007943A2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,6 +552,7 @@
 				64797A3A1E82E0AB007943A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		64797A3B1E82E0AB007943A2 /* Build configuration list for PBXNativeTarget "PinfinityTests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +561,7 @@
 				64797A3D1E82E0AB007943A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		64797A3E1E82E0AB007943A2 /* Build configuration list for PBXNativeTarget "PinfinityUITests" */ = {
 			isa = XCConfigurationList;
@@ -544,6 +570,7 @@
 				64797A401E82E0AB007943A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
