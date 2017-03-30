@@ -11,4 +11,14 @@ import GameplayKit
 
 class Ball: SKSpriteNode {
     
+    func update() {
+        /*if (self.position.y < -350) {
+            self.        }*/
+    }
+    
+    func setName() {
+        self.name = "Original Ball"
+    }
+    
+
 }

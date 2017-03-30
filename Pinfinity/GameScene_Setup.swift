@@ -12,52 +12,34 @@ import GameplayKit
 extension GameScene {
     
     func setUp() {
+        /*
         setupRightFlipper()
         setupLeftFlipper()
         setupScore()
         setupCoinScore()
         setupEdges()
-        setupOriginalBall()
         setupFlipperStopper()
         setupFlipperJoints()
-    }
-    
-    func setupFlipperJoints(){
-        let rightFlipperAnchor = SKNode()
-        rightFlipperAnchor.position = (rightFlipper?.position)!
-        rightFlipperAnchor.physicsBody = SKPhysicsBody()
-        rightFlipperAnchor.physicsBody?.isDynamic = false
-        rightFlipperAnchor.zRotation = (rightFlipper?.zRotation)!
-        addChild(rightFlipperAnchor)
-        
-        let rightPinJoint = SKPhysicsJointPin.joint(withBodyA: rightFlipperAnchor.physicsBody!, bodyB: (rightFlipper?.physicsBody)!, anchor: rightFlipperAnchor.position)
-        rightPinJoint.shouldEnableLimits = true
-        rightPinJoint.lowerAngleLimit = -1.047199999891
-        rightPinJoint.upperAngleLimit = 1.047199999891
-        //rightPinJoint.rotationSpeed = 0.01
-        physicsWorld.add(rightPinJoint)
-        
-        let leftFlipperAnchor = SKNode()
-        leftFlipperAnchor.position = (leftFlipper?.position)!
-        leftFlipperAnchor.physicsBody = SKPhysicsBody()
-        leftFlipperAnchor.physicsBody?.isDynamic = false
-        leftFlipperAnchor.zRotation = (leftFlipper?.zRotation)!
-        addChild(leftFlipperAnchor)
-        
-        let leftPinJoint = SKPhysicsJointPin.joint(withBodyA: leftFlipperAnchor.physicsBody!, bodyB: (leftFlipper?.physicsBody)!, anchor: leftFlipperAnchor.position)
-        leftPinJoint.shouldEnableLimits = true
-        leftPinJoint.lowerAngleLimit = -1.047199999891
-        leftPinJoint.upperAngleLimit = 1.047199999891
-        //leftPinJoint.rotationSpeed = 0.01
-        physicsWorld.add(leftPinJoint)
+        */
+        setupOriginalBall()
+        setupStaticObject()
     }
     
     func setupOriginalBall() {
+        
         if let ball: Ball = self.childNode(withName: "Original Ball") as? Ball {
             originalBall = ball
         }
     }
     
+    func setupStaticObject() {
+        if let st: StaticObject = self.childNode(withName: "Statics") as? StaticObject {
+            staticObject = st
+            staticObject?.setup()
+        }
+    }
+
+    /*
     func setupEdges() {
         let topRight = CGPoint(x: 187.5, y: 333.5)
         let topLeft = CGPoint(x: -187.4, y: 333.5)
@@ -109,4 +91,37 @@ extension GameScene {
             flipperStopper = stopper
         }
     }
+    
+    
+    func setupFlipperJoints(){
+        let rightFlipperAnchor = SKNode()
+        rightFlipperAnchor.position = (rightFlipper?.position)!
+        rightFlipperAnchor.physicsBody = SKPhysicsBody()
+        rightFlipperAnchor.physicsBody?.isDynamic = false
+        rightFlipperAnchor.zRotation = (rightFlipper?.zRotation)!
+        addChild(rightFlipperAnchor)
+        
+        let rightPinJoint = SKPhysicsJointPin.joint(withBodyA: rightFlipperAnchor.physicsBody!, bodyB: (rightFlipper?.physicsBody)!, anchor: rightFlipperAnchor.position)
+        rightPinJoint.shouldEnableLimits = true
+        rightPinJoint.lowerAngleLimit = -1.047199999891
+        rightPinJoint.upperAngleLimit = 1.047199999891
+        //rightPinJoint.rotationSpeed = 0.01
+        physicsWorld.add(rightPinJoint)
+        
+        let leftFlipperAnchor = SKNode()
+        leftFlipperAnchor.position = (leftFlipper?.position)!
+        leftFlipperAnchor.physicsBody = SKPhysicsBody()
+        leftFlipperAnchor.physicsBody?.isDynamic = false
+        leftFlipperAnchor.zRotation =
+            (leftFlipper?.zRotation)!
+        addChild(leftFlipperAnchor)
+        
+        let leftPinJoint = SKPhysicsJointPin.joint(withBodyA: leftFlipperAnchor.physicsBody!, bodyB: (leftFlipper?.physicsBody)!, anchor: leftFlipperAnchor.position)
+        leftPinJoint.shouldEnableLimits = true
+        leftPinJoint.lowerAngleLimit = -1.047199999891
+        leftPinJoint.upperAngleLimit = 1.047199999891
+        //leftPinJoint.rotationSpeed = 0.01
+        physicsWorld.add(leftPinJoint)
+    }
+    */
 }

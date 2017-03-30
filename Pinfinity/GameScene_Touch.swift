@@ -65,13 +65,13 @@ extension GameScene {
     }
     
     func touchedLeft() {
-        leftFlipper?.flipperMoveUp(onSide: "Left")
-        score += 1
+        staticObject?.leftFlipper?.flipperMoveUp(onSide: "Left")
+        staticObject?.score += 1
     }
     
     func touchedRight() {
-        rightFlipper?.flipperMoveUp(onSide: "Right")
-        coinScore += 1
+        staticObject?.rightFlipper?.flipperMoveUp(onSide: "Right")
+        staticObject?.coinScore += 1
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -86,11 +86,11 @@ extension GameScene {
     }
     
     func letGoLeft() {
-        leftFlipper?.flipperMoveDown(onSide: "Left")
+        staticObject?.leftFlipper?.flipperMoveDown(onSide: "Left")
     }
     
     func letGoRight() {
-        rightFlipper?.flipperMoveDown(onSide: "Right")
+        staticObject?.rightFlipper?.flipperMoveDown(onSide: "Right")
     }
     
     

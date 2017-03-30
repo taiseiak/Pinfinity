@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64544AEC1E8CCFA0004A28BF /* StaticObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64544AEB1E8CCFA0004A28BF /* StaticObject.swift */; };
 		6466218F1E8CA3B100B91615 /* GameScene_FlipperStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6466218E1E8CA3B100B91615 /* GameScene_FlipperStop.swift */; };
 		64797A0E1E82E0AB007943A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64797A0D1E82E0AB007943A2 /* AppDelegate.swift */; };
 		64797A101E82E0AB007943A2 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 64797A0F1E82E0AB007943A2 /* GameScene.sks */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		64544AEB1E8CCFA0004A28BF /* StaticObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticObject.swift; sourceTree = "<group>"; };
 		6466218E1E8CA3B100B91615 /* GameScene_FlipperStop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene_FlipperStop.swift; sourceTree = "<group>"; };
 		64797A0A1E82E0AB007943A2 /* Pinfinity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pinfinity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64797A0D1E82E0AB007943A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				64797A1C1E82E0AB007943A2 /* LaunchScreen.storyboard */,
 				64797A1F1E82E0AB007943A2 /* Info.plist */,
 				64F5B3151E8746F40027C5DF /* Flipper.swift */,
+				64544AEB1E8CCFA0004A28BF /* StaticObject.swift */,
 				64CE99C81E87825400F5CD56 /* Ball.swift */,
 			);
 			path = Pinfinity;
@@ -312,6 +315,7 @@
 				6466218F1E8CA3B100B91615 /* GameScene_FlipperStop.swift in Sources */,
 				64E7346D1E8C60B300B9740C /* GameScene_Setup.swift in Sources */,
 				64797A0E1E82E0AB007943A2 /* AppDelegate.swift in Sources */,
+				64544AEC1E8CCFA0004A28BF /* StaticObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
