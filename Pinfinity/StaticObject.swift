@@ -11,6 +11,7 @@ import GameplayKit
 
 class StaticObject: SKNode {
     
+    //Declaration for nodes
     var rightFlipper : Flipper?
     var leftFlipper : Flipper?
     var scoreLabel : SKLabelNode?
@@ -25,8 +26,9 @@ class StaticObject: SKNode {
             coinLabel?.text = "\(coinScore)"
         }
     }
-    
     var flipperStopper: SKSpriteNode?
+    var mainCamera: SKCameraNode?
+    
 
     
     func setup() {
@@ -37,7 +39,15 @@ class StaticObject: SKNode {
         setupEdges()
         setupFlipperStopper()
         setupFlipperJoints()
+        setupCamera()
     }
+    
+    func setupCamera() {
+        if let camera: SKCameraNode = childNode(withName: "Main Camera") as? SKCameraNode {
+            mainCamera = camera
+        }
+    }
+    
     
     func setupFlipperJoints(){
         let rightFlipperAnchor = SKNode()
@@ -105,14 +115,12 @@ class StaticObject: SKNode {
     func setupRightFlipper() {
         if let flipper: Flipper = self.childNode(withName: "Right Flipper") as? Flipper {
             rightFlipper = flipper
-            //rightFlipper?.initialPos = (rightFlipper?.position)!
         }
     }
     
     func setupLeftFlipper() {
         if let flipper: Flipper = self.childNode(withName: "Left Flipper") as? Flipper {
             leftFlipper = flipper
-            //leftFlipper?.initialPos = (leftFlipper?.position)!
         }
     }
     

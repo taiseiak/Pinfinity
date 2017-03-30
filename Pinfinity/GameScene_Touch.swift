@@ -56,11 +56,10 @@ extension GameScene {
                 touchedRight()
             }
             
-            if (t.location(in: self).x > 0 && t.location(in: self).y > 0) {
+            if (t.location(in: self).x > 0 && t.location(in: self).y > (staticObject?.position.y)!) {
                 moveOriginalBall(toPoint: t.location(in: self))
                 originalBall?.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
             }
-            //self.touchDown(atPoint: t.location(in: self))
         }
     }
     

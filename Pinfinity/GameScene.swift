@@ -32,27 +32,30 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
  `*/
     
     var originalBall: Ball?
-    
+    private var lastUpdateTime : TimeInterval = 0
     
     override func didMove(to view: SKView) {
+        self.lastUpdateTime = 0
         setUp()
     }
     
     override func update(_ currentTime: TimeInterval) {
+        
         let leftFlipper = staticObject?.leftFlipper
         let rightFlipper = staticObject?.rightFlipper
         leftFlipper?.update()
         rightFlipper?.update()
         
-        if ((originalBall?.position.y)! < CGPoint(x: 0, y: -350).y) {
-            originalBall?.position = CGPoint(x: 0, y: 0)
+        if ((originalBall?.position.y)! < (staticObject?.position.y)! - CGFloat(350)) {
+            originalBall?.position = (staticObject?.position)!
             originalBall?.physicsBody?.isDynamic = false
         }
-    }
-    
-    func moveOriginalBall(toPoint pos : CGPoint) {
-        originalBall?.position = pos
-        originalBall?.physicsBody?.isDynamic = true
+        
+        let moveLine = (staticObject?.position.y)! + CGFloat(200)
+        
+        if ((originalBall?.position.y)! > moveLine) {
+            staticObject?.position = CGPoint(x: CGFloat(0), y: (originalBall?.position.y)! - CGFloat(200))
+        }
     }
     
     /*func didBegin(_ contact: SKPhysicsContact) {

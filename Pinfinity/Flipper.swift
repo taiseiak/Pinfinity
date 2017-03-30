@@ -34,7 +34,7 @@ class Flipper: SKSpriteNode {
             self.physicsBody?.allowsRotation = true
             self.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
             self.physicsBody?.angularVelocity = 0
-            self.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 2500))
+            self.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 3000))
             self.lockFlipperUp(onSide: side)
             self.run(playFlipperUp)
             
@@ -44,7 +44,7 @@ class Flipper: SKSpriteNode {
             self.physicsBody?.allowsRotation = true
             self.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
             self.physicsBody?.angularVelocity = 0
-            self.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 2500))
+            self.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 3000))
             self.lockFlipperUp(onSide: side)
             self.run(playFlipperUp)
         default:
