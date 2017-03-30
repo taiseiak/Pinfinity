@@ -56,7 +56,8 @@ extension GameScene {
                 touchedRight()
             }
             
-            if (t.location(in: self).x > 0 && t.location(in: self).y > (staticObject?.position.y)!) {
+            if (t.location(in: self).y > 0 && t.location(in: self).y < 250 && start == false) {
+                start = true
                 moveOriginalBall(toPoint: t.location(in: self))
                 originalBall?.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
             }
@@ -65,12 +66,10 @@ extension GameScene {
     
     func touchedLeft() {
         staticObject?.leftFlipper?.flipperMoveUp(onSide: "Left")
-        staticObject?.score += 1
     }
     
     func touchedRight() {
         staticObject?.rightFlipper?.flipperMoveUp(onSide: "Right")
-        staticObject?.coinScore += 1
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {

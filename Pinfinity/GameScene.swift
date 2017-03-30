@@ -32,29 +32,39 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
  `*/
     
     var originalBall: Ball?
-    private var lastUpdateTime : TimeInterval = 0
+    var start: Bool = false
     
     override func didMove(to view: SKView) {
-        self.lastUpdateTime = 0
+        staticObject?.score = 0
+        start = false
         setUp()
     }
     
     override func update(_ currentTime: TimeInterval) {
+        let moveLine = (staticObject?.position.y)! + CGFloat(250)
+        let resetPosition = CGPoint(x: 0, y: -354)
+        
+        
         
         let leftFlipper = staticObject?.leftFlipper
         let rightFlipper = staticObject?.rightFlipper
         leftFlipper?.update()
         rightFlipper?.update()
         
-        if ((originalBall?.position.y)! < (staticObject?.position.y)! - CGFloat(350)) {
-            originalBall?.position = (staticObject?.position)!
+        if ((originalBall?.position.y)! < (staticObject?.position.y)! - CGFloat(355)) {
+            staticObject?.position = CGPoint(x: 0, y: 0)
+            originalBall?.position = resetPosition
             originalBall?.physicsBody?.isDynamic = false
+            staticObject?.score = 0
+            start = false
         }
         
-        let moveLine = (staticObject?.position.y)! + CGFloat(200)
+        
         
         if ((originalBall?.position.y)! > moveLine) {
-            staticObject?.position = CGPoint(x: CGFloat(0), y: (originalBall?.position.y)! - CGFloat(200))
+            let dBall = Int(((originalBall?.position.y)! - moveLine))
+            staticObject?.score += dBall
+            staticObject?.position = CGPoint(x: CGFloat(0), y: (originalBall?.position.y)! - CGFloat(250))
         }
     }
     

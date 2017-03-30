@@ -24,6 +24,13 @@ class Flipper: SKSpriteNode {
         } else if  (alreadyUp && self.zRotation == -0.52) {
             self.lockFlipperUp(onSide: "right")
         }
+        /*
+        if (self.name == "Left Flipper") {
+            self.position = CGPoint(x: CGFloat(-120), y: CGFloat(-240))
+        } else if (self.name == "Right Flipper") {
+            self.position = CGPoint(x: CGFloat(120), y: CGFloat(-240))
+        }
+        */
     }
     
     func flipperMoveUp(onSide side: String) {
@@ -60,7 +67,7 @@ class Flipper: SKSpriteNode {
             self.physicsBody?.allowsRotation = true
             self.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
             self.physicsBody?.angularVelocity = 0
-            self.physicsBody?.applyImpulse(CGVector(dx: 0, dy: -1000))
+            //self.physicsBody?.applyImpulse(CGVector(dx: 0, dy: -100))
             self.lockFlipperDown(onSide: side)
             self.run(playFlipperDown)
             
@@ -70,7 +77,7 @@ class Flipper: SKSpriteNode {
             self.physicsBody?.allowsRotation = true
             self.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
             self.physicsBody?.angularVelocity = 0
-            self.physicsBody?.applyImpulse(CGVector(dx: 0, dy: -1000))
+            //self.physicsBody?.applyImpulse(CGVector(dx: 0, dy: -100))
             self.lockFlipperDown(onSide: side)
             self.run(playFlipperDown)
         default:
@@ -134,6 +141,12 @@ class Flipper: SKSpriteNode {
         self.physicsBody?.allowsRotation = false
         self.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 0))
         self.physicsBody?.angularVelocity = 0
+        if (self.name == "Left Flipper") {
+            self.position = CGPoint(x: CGFloat(-120), y: CGFloat(-240))
+        } else if (self.name == "Right Flipper") {
+            self.position = CGPoint(x: CGFloat(120), y: CGFloat(-240))
+        }
+
     }
     
 }
