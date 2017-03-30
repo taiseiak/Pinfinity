@@ -15,18 +15,38 @@ class Flipper: SKSpriteNode {
     let rotateToNeg30: SKAction = SKAction(named: "RotateToNeg30")!
     let playFlipperUp: SKAction = SKAction.playSoundFileNamed("FlipperUp", waitForCompletion: false)
     let playFlipperDown: SKAction = SKAction.playSoundFileNamed("FlipperDown", waitForCompletion: false)
-    var touch: Bool = false
+    
+    var alreadyUp: Bool = false
+    
+    func update() {
+        if (alreadyUp && self.zRotation == 0.52) {
+            self.lockFlipperUp(onSide: "left")
+        } else if  (alreadyUp && self.zRotation == -0.52) {
+            self.lockFlipperUp(onSide: "right")
+        }
+    }
     
     func flipperMoveUp(onSide side: String) {
         switch side{
         case "Left", "left":
-            self.run(rotateTo30)
+            alreadyUp = false
+            self.physicsBody?.isDynamic = true
+            self.physicsBody?.allowsRotation = true
+            self.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+            self.physicsBody?.angularVelocity = 0
+            self.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 2500))
+            self.lockFlipperUp(onSide: side)
             self.run(playFlipperUp)
             
         case "Right", "right":
-            self.run(rotateToNeg30)
+            alreadyUp = false
+            self.physicsBody?.isDynamic = true
+            self.physicsBody?.allowsRotation = true
+            self.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+            self.physicsBody?.angularVelocity = 0
+            self.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 2500))
+            self.lockFlipperUp(onSide: side)
             self.run(playFlipperUp)
-            
         default:
             break
         }
@@ -35,61 +55,85 @@ class Flipper: SKSpriteNode {
     func flipperMoveDown(onSide side: String) {
         switch side{
         case "Left", "left":
-            self.run(rotateToNeg30)
+            alreadyUp = false
+            self.physicsBody?.isDynamic = true
+            self.physicsBody?.allowsRotation = true
+            self.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+            self.physicsBody?.angularVelocity = 0
+            self.physicsBody?.applyImpulse(CGVector(dx: 0, dy: -1000))
+            self.lockFlipperDown(onSide: side)
             self.run(playFlipperDown)
             
         case "Right", "right":
-            self.run(rotateTo30)
+            alreadyUp = false
+            self.physicsBody?.isDynamic = true
+            self.physicsBody?.allowsRotation = true
+            self.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+            self.physicsBody?.angularVelocity = 0
+            self.physicsBody?.applyImpulse(CGVector(dx: 0, dy: -1000))
+            self.lockFlipperDown(onSide: side)
             self.run(playFlipperDown)
-            
         default:
             break
         }
     }
     
-    func flipperMoveDownNoSound(onSide side: String) {
-        
-        switch side {
-        case "Left", "left":
-            self.run(rotateToNeg30)
-            
-        case "Right", "right":
-            self.run(rotateTo30)
-
-        default:
-            break
-        }
-        
-    }
-    
-    func playDownSound() {
-        self.run(playFlipperDown)
-    }
-    
-    func flipperMove(onSide side: String) {
+    func lockFlipperUp(onSide side: String) {
         switch side{
-        case "Left", "left":
-            if touch {
-                self.run(rotateTo30)
-                self.run(playFlipperUp)
-            } else {
-                self.run(rotateToNeg30)
-                self.run(playFlipperDown)
+        case "left", "Left":
+            let lockFlipperAction: SKAction = SKAction.run {
+                self.zRotation = 0.523599
+                self.lockFlipper()
             }
-            
-        case "Right", "right":
-            if touch {
-                self.run(rotateToNeg30)
-                self.run(playFlipperUp)
-            } else {
-                self.run(rotateTo30)
-                self.run(playFlipperDown)
-            }
+            self.run(SKAction.sequence([rotateTo30, lockFlipperAction]))
         
+        
+        case "right", "Right":
+            let lockFlipperAction: SKAction = SKAction.run {
+                self.zRotation = -0.523599
+                self.lockFlipper()
+            }
+            self.run(SKAction.sequence([rotateToNeg30, lockFlipperAction]))
+            
         default:
-            return
+            break
         }
         
+        
+    }
+    
+    func lockFlipperDown(onSide side: String) {
+        self.physicsBody?.angularVelocity = 0
+        self.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+        switch side{
+        case "left", "Left":
+            let lockFlipperAction: SKAction = SKAction.run {
+                self.zRotation = -0.523599
+                self.lockFlipper()
+            }
+            self.run(SKAction.sequence([rotateToNeg30, lockFlipperAction]))
+            
+            
+        case "right", "Right":
+            let lockFlipperAction: SKAction = SKAction.run {
+                self.zRotation = 0.523599
+                self.lockFlipper()
+            }
+            
+            self.run(SKAction.sequence([rotateTo30, lockFlipperAction]))
+            
+        default:
+            break
+        }
+        
+    }
+    
+    func lockFlipper() {
+        self.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+        self.physicsBody?.isDynamic = false
+        self.physicsBody?.allowsRotation = false
+        self.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 0))
+        self.physicsBody?.angularVelocity = 0
     }
     
 }
